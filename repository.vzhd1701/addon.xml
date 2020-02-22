@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="repository.vzhd1701" name="vzhd1701 repository" provider-name="vzhd1701" version="1.0.0">
+    <extension point="xbmc.addon.metadata">
+        <summary>vzhd1701 repository</summary>
+        <description>Addon repository by vzhd1701</description>
+        <platform>all</platform>
+    </extension>
+    <extension name="vzhd1701 repository" point="xbmc.addon.repository">
+        <info compressed="false">https://raw.githubusercontent.com/vzhd1701/kodi.repository/master/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/vzhd1701/kodi.repository/master/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/vzhd1701/kodi.repository/master</datadir>
+    </extension>
+</addon>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <addons>
-    <addon id="plugin.video.kinomanuz" name="Kinoman.Uz" provider-name="vzhd1701" version="0.0.2">
+    <addon id="plugin.video.kinomanuz" name="Kinoman.Uz" provider-name="vzhd1701" version="0.0.3">
         <requires>
-            <import addon="xbmc.python" version="2.25.0"/>
-            <import addon="script.module.requests" version="2.19.1"/>
+            <import addon="xbmc.python" version="3.0.0"/>
+            <import addon="script.module.requests" version="2.22.0"/>
         </requires>
         <extension library="addon.py" point="xbmc.python.pluginsource">
             <provides>video</provides>
@@ -21,7 +21,7 @@
                 <icon>icon.png</icon>
                 <fanart>fanart.jpg</fanart>
             </assets>
-            <news>[B]v0.0.2[/B] (2020-04-11)[CR]- Исправление работы со ссылками на видео[CR]- Теперь проигрыватель должен запоминать место воспроизведения</news>
+            <news>[B]v0.0.3[/B] (2021-02-25)[CR]- Совместимость с Kodi 19</news>
         </extension>
     </addon>
     <addon id="repository.vzhd1701" name="vzhd1701 repository" provider-name="vzhd1701" version="1.0.0">

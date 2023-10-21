@@ -35,7 +35,7 @@
                 <info>https://raw.githubusercontent.com/vzhd1701/kodi.repository/master/addons.xml</info>
                 <checksum>https://raw.githubusercontent.com/vzhd1701/kodi.repository/master/addons.xml.sha256</checksum>
                 <datadir zip="true">https://raw.githubusercontent.com/vzhd1701/kodi.repository/master</datadir>
-                <hashes>sha256</hashes>
+                <hashes>false</hashes>
             </dir>
         </extension>
     </addon>

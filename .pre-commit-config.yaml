@@ -22,7 +22,6 @@ repos:
     hooks:
     -   id: verify_checksums
         name: verify checksum
-        always_run: true
         stages: [commit]
         language: system
         entry: bash scripts/verify_checksums.sh

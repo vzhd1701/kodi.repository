@@ -1,0 +1,51 @@
+name: Update add-ons
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-addons
+  cancel-in-progress: false
+
+jobs:
+  update:
+    # Kodi's repository installer downloads the catalog from master.
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+
+      - name: Test publisher
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Check for newer add-ons and build packages
+        run: python3 scripts/update_addons.py
+
+      - name: Publish updated catalog and packages
+        shell: bash
+        run: |
+          git add -- addons.xml addons.xml.sha256
+          python3 - <<'PY'
+          import json
+          import subprocess
+          from pathlib import Path
+
+          for source in json.loads(Path("addon-sources.json").read_text()):
+              folder = Path(source["id"])
+              if folder.is_dir():
+                  subprocess.run(["git", "add", "--", str(folder)], check=True)
+          PY
+          if git diff --cached --quiet; then
+            echo "All add-ons are up to date. Nothing to publish." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "chore: update Kodi add-on packages"
+          git push origin HEAD:master
+          echo "Published updated add-ons and catalog to master." >> "$GITHUB_STEP_SUMMARY"

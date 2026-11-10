@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <addons>
-    <addon id="plugin.video.kinomanuz" name="Kinoman.Uz" provider-name="vzhd1701" version="0.0.3">
+    <addon id="plugin.video.kinomanuz" name="Kinoman.Uz" provider-name="vzhd1701" version="0.0.4">
         <requires>
-            <import addon="xbmc.python" version="3.0.0"/>
-            <import addon="script.module.requests" version="2.22.0"/>
+            <import addon="xbmc.python" version="3.0.0" />
+            <import addon="script.module.requests" version="2.22.0" />
         </requires>
         <extension library="addon.py" point="xbmc.python.pluginsource">
             <provides>video</provides>
@@ -21,7 +21,7 @@
                 <icon>icon.png</icon>
                 <fanart>fanart.jpg</fanart>
             </assets>
-            <news>[B]v0.0.3[/B] (2021-02-25)[CR]- Совместимость с Kodi 19</news>
+            <news>[B]v0.0.4[/B] (2026-11-10)[CR]- Исправлен вход после перенаправления сайта на kinoman.uz</news>
         </extension>
     </addon>
     <addon id="repository.vzhd1701" name="vzhd1701 repository" provider-name="vzhd1701" version="2.0.0">
